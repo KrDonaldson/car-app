@@ -198,10 +198,6 @@ export const Inventory = withRouter(( props:InventoryProps ) => {
             onClick: () => history.push('/')
         },
         {
-            text: 'Sign In',
-            onClick: () => history.push('/signin')
-        },
-        {
             text: 'About',
             onClick: () => history.push('/about')
         },

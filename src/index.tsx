@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { FirebaseAppProvider, AuthCheck } from 'reactfire';
+import { firebaseConfig } from './firebaseConfig'
+import 'firebase/auth';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Home, Inventory, About, ContactUs, SignIn } from './components';
@@ -11,6 +14,7 @@ let title = 'Car Inventory'
 
 ReactDOM.render(
   <React.StrictMode>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig} suspense={true}>
     <Provider store={store}>
 
     <Router>
@@ -35,6 +39,7 @@ ReactDOM.render(
       </Switch>
     </Router>
     </Provider>
+    </FirebaseAppProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
